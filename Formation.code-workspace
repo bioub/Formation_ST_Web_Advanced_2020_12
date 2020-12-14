@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "Immutability"
+		},
+		{
+			"path": "Modules"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Modules"
+	}
+}
