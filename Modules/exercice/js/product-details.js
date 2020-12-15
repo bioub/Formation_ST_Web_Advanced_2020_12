@@ -1,5 +1,7 @@
+import { selectedProduct } from "./products.js";
+
 /** @param {HTMLElement} mainEl */
-function productDetails(mainEl) {
+export function productDetails(mainEl) {
   if (!selectedProduct) {  // à importer
     location.hash = '/products';
     return;

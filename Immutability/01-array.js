@@ -4,6 +4,12 @@ const data = [
   { id: 789, name: 'Jacques' }
 ];
 
+// data[0].name = data[0].name.toUpperCase();
+// const newData = [
+//   {...data[0], name: data[0].name.toUpperCase()},
+//   ...data.slice(1),
+// ];
+
 // newData est un nouveau tableau en mémoire
 // qui contient des nouveaux objets return ({})
 // avec les clés/valeurs précédent ({...v})

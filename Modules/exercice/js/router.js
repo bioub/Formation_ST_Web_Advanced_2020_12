@@ -1,3 +1,10 @@
+import { about } from "./about.js";
+import { home } from "./home.js";
+import { notFound } from "./not-found.js";
+import { productDetails } from "./product-details.js";
+import { products } from "./products.js";
+import { search } from "./search.js";
+
 const routes = [
   {
     hash: '#/',
@@ -21,7 +28,7 @@ const routes = [
   },
 ];
 
-function matchRoute() {
+export function matchRoute() {
   const mainEl = document.querySelector('body > main');
 
   const match = routes.find((route) => route.hash === location.hash);
@@ -43,5 +50,3 @@ function matchRoute() {
   }
 }
 
-matchRoute();
-window.addEventListener('hashchange', matchRoute);

@@ -1,11 +1,11 @@
-const filters = {
+export const filters = {
   name: '',
   fmRadio: 'whatever',
   availability: [],
 };
 
 /** @param {HTMLElement} mainEl */
-function search(mainEl) {
+export function search(mainEl) {
   const template = `
 <div class="form-row">
   <h3>Name</h3>

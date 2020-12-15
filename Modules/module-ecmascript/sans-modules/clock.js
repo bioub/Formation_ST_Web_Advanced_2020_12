@@ -1,4 +1,5 @@
 export class Clock {
+  /** @param {HTMLElement} containerEl */
   constructor(containerEl) {
     this._containerEl = containerEl;
   }
@@ -7,9 +8,13 @@ export class Clock {
     this._containerEl.innerText = now.toLocaleTimeString();
   }
   start() {
-    setInterval(() => {
+    this._render();
+    this._interval = setInterval(() => {
       this._render();
     }, 1000);
+  }
+  stop() {
+    clearInterval(_interval);
   }
 }
 

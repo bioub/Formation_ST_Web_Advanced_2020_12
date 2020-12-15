@@ -1,4 +1,6 @@
-let selectedProduct = null;
+import { filters } from "./search.js";
+
+export let selectedProduct = null;
 const selectedProductLocalStorage = localStorage.getItem('selectedProduct');
 
 if (selectedProductLocalStorage) {
@@ -8,7 +10,7 @@ if (selectedProductLocalStorage) {
 let productsList = [];
 
 /** @param {HTMLElement} mainEl */
-function products(mainEl) {
+export function products(mainEl) {
   const template = `
 <table>
   <tr>
