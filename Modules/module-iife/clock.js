@@ -8,7 +8,7 @@
     }
     _render() {
       const now = new Date();
-      this._containerEl.innerText = now.toLocaleTimeString();
+      this._containerEl.innerText = moment(now).format('HH:mm:ss');
     }
     start() {
       this._render();

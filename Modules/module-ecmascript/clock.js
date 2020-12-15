@@ -1,3 +1,5 @@
+import moment from '../node_modules/moment/dist/moment.js';
+
 export class Clock {
   /** @param {HTMLElement} containerEl */
   constructor(containerEl) {
@@ -5,7 +7,7 @@ export class Clock {
   }
   _render() {
     const now = new Date();
-    this._containerEl.innerText = now.toLocaleTimeString();
+    this._containerEl.innerText = moment(now).format('HH:mm:ss');
   }
   start() {
     this._render();
