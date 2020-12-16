@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "Async"
+		},
+		{
+			"path": "typescript"
 		}
 	],
 	"settings": {

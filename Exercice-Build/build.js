@@ -27,3 +27,43 @@ const appJsDistPath = path.resolve(distPath, 'app.js');
 
 // si vous utiliser un callback vous n'aurez plus la promesses
 // fs.readFile('source.txt', () => {}) // donc pas de .then() possible
+
+async function rmAndMkdir() {
+  await fs.remove(distPath);
+  await fs.mkdir(distPath);
+}
+
+
+async function buildJs() {
+  // const bufferHorloge = await fs.readFile(horlogeJsPath);
+  // const bufferIndex = await fs.readFile(indexJsPath);
+
+  const buffers = await Promise.all([
+    fs.readFile(horlogeJsPath),
+    fs.readFile(indexJsPath),
+  ]);
+
+  // await fs.appendFile(appJsDistPath, buffers[0]);
+  // await fs.appendFile(appJsDistPath, buffers[1]);
+
+  await fs.writeFile(appJsDistPath, Buffer.concat(buffers));
+}
+
+async function buildHtml() {
+  let content = await fs.readFile(indexHtmlPath, { encoding: 'utf-8' });
+
+  content = content.replace(/<script.*<\/script>/s, '<script src="app.js"></script>');
+
+  await fs.writeFile(indexHtmlDistPath, content);
+}
+
+async function build() {
+  await rmAndMkdir();
+  await Promise.all([
+    buildJs(),
+    buildHtml(),
+  ]);
+  console.log('Build DONE')
+}
+
+build();
