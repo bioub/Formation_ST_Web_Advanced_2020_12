@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>Button 1</button>
+  <button>Button 2</button>
+  <button>Button 3</button>
+  <script>
+    const buttonEls = document.querySelectorAll('button');
+
+    for (var btn of buttonEls) {
+      // pas de closure
+      btn.addEventListener('click', () => {
+        console.log(btn.innerText); // toujours Button 3    
+      });
+    }
+
+    let btnEl;
+    for (btnEl of buttonEls) {
+      // pas de closure
+      btnEl.addEventListener('click', () => {
+        console.log(btnEl.innerText); // toujours Button 3    
+      });
+    }
+
+    // ^
+    // |
+    // |for { ael (btn = 1) - ael (btn = 2) - ael (btn = 3) } (btn = 3) ..↻..    =>
+    // +-------------------------------------------------------------------------(click button 2)------------>
+    //                                                                           Button 3    
+
+    for (const btnElClosure of buttonEls) {
+      // closure : btnElClosure est sauvegardé (au moment du click on affiche la valeur du bouton)
+      btnElClosure.addEventListener('click', () => {
+        console.log(btnElClosure.innerText); // la valeur du bouton sur le lequel j'ai cliqué   
+      });
+    }
+
+    // ^
+    // |
+    // |for { ael (btn = 1) - ael (btn = 2) - ael (btn = 3) } (btn = undefined) ..↻..    =>
+    // +---------------------------------------------------------------------------------(click button 2)------------>
+    //                                                                                   Button 2
+  </script>
+</body>
+</html>

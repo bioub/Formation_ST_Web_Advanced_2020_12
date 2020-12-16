@@ -33,6 +33,10 @@ try {
 
 // callback hell / pyramid of doom
 // callbackhell.com
+// fs.readFile('source.txt', { encoding: 'utf-8' }, (err, data) => {
+//   console.log(data);
+// });
+
 fs.readFile("source.txt", { encoding: "utf-8" }, (err, data) => {
   if (err) {
     console.log(err);
@@ -57,6 +61,8 @@ fs.readFile("source.txt", { encoding: "utf-8" }, (err, data) => {
 // fs.promises.readFile('source.txt', { encoding: 'utf-8' })
 //   .then((data) => console.log(data));
 
+// Dans fs c'est possible depuis Node 12
+
 fs.promises.readFile('source.txt', { encoding: 'utf-8' })
    .then((data) => fs.promises.writeFile("dest.txt", data))
    .then(() => console.log("COPY DONE"))
@@ -75,3 +81,4 @@ async function copy() {
 }
 
 copy();
+// console.log('juste après le premier await');

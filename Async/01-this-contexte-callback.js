@@ -14,13 +14,14 @@
 
 // ECMAScript 6
 class Contact {
-  constructor(name) {
-    this.name = name;
+  constructor() {
+    this.name = 'Romain';
   }
   hello() {
     console.log(`Hello ${this.name}`);
   }
   helloTimeout() {
+    // this de la closure
     // En ES6 les arrow function aident à résoudre ce problème
     setTimeout(() => {
       // les pseudo variables ne sont pas créées à l'appel :
@@ -33,8 +34,8 @@ class Contact {
 
 // ECMAScript 5
 // class Contact {
-//   constructor(name) {
-//     this.name = name;
+//   constructor() {
+//     this.name = 'Romain';
 //   }
 //   hello() {
 //     console.log(`Hello ${this.name}`);
@@ -47,8 +48,8 @@ class Contact {
 
 // ECMAScript 3
 // class Contact {
-//   constructor(name) {
-//     this.name = name;
+//   constructor() {
+//     this.name = 'Romain';
 //   }
 //   hello() {
 //     console.log(`Hello ${this.name}`);
@@ -62,5 +63,18 @@ class Contact {
 //   }
 // }
 
-const romain = new Contact("Romain");
+// BUG pas le bon this
+// class Contact {
+//   constructor() {
+//     this.name = 'Romain';
+//   }
+//   hello() {
+//     console.log(`Hello ${this.name}`);
+//   }
+//   helloTimeout() {
+//     setTimeout(this.hello, 1000); // timer._onTimeout();
+//   }
+// }
+
+const romain = new Contact();
 romain.helloTimeout();

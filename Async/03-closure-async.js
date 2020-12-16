@@ -19,5 +19,5 @@ console.log('FIN');
 // ^
 // |
 // |
-// |externe ...          interne
+// |externe ..↻..        interne
 // +---------------------1s----->

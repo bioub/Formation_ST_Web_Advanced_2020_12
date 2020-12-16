@@ -1,5 +1,5 @@
-import { Clock } from "./clock.js";
+import { Clock as Horloge } from "./clock.js";
 
 const clockEl = document.querySelector('#horloge');
-const clock = new Clock(clockEl);
+const clock = new Horloge(clockEl);
 clock.start();
