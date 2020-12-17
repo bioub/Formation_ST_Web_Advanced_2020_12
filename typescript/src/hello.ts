@@ -1,6 +1,6 @@
 const prenoms = ['Romain', 'Eric', 'Frédéric'];
 
-function hello(name: string) {
+function hello(name: string): string {
   return `Hello ${name.toUpperCase()} !`;
 }
 

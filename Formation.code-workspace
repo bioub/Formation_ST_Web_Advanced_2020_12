@@ -14,9 +14,12 @@
 		},
 		{
 			"path": "typescript"
+		},
+		{
+			"path": "typescript-spa"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "Async"
+		"liveServer.settings.multiRootWorkspaceName": "typescript"
 	}
 }

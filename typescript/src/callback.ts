@@ -1,15 +1,7 @@
-// function setTimeoutSync(cb: (val: string) => void, delay: number) {
-//   cb('string');
-// }
-
-// setTimeoutSync(() => {}, 1000);
-
-interface SetTimeoutCallback {
-  (val: string): void;
+function useCallback(cb: Function) {
+  cb();
 }
 
-function setTimeoutSync(cb: SetTimeoutCallback, delay: number) {
-  cb('string');
-}
+function Test() {}
 
-setTimeoutSync(() => {}, 1000);
+useCallback(Test);

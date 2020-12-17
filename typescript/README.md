@@ -12,13 +12,15 @@ Générer un fichier `tsconfig.json` avec la commande `--init` du programme `tsc
 
 Dans le fichier `package.json` créer un script `build` qui lance simplement le programme `tsc`
 
-Déplacer les sources dans un dossier `src` et renommer les fichiers en `.ts`
+Déplacer les sources (HTML/img/CSS/JS) dans un dossier `src` et renommer les fichiers en `.ts` (ne renommez pas les imports qui doivent rester en `.js`)
 
 Dans le fichier `tsconfig.json` indiquer que les sources à builder sont dans le dossier `src` et quelle doivent builder vers le dossier `dist`
 
 (on copiera le dossier `img`, les fichiers `css` et le fichier `index.html` manuellement pour l'instant)
 
 Dans le fichier `tsconfig.json` indique que le format de modules doit rester en ECMAScript 2015.
+
+Passer la `target` en `ES2016`.
 
 ## Typage
 
@@ -33,7 +35,11 @@ Dans le fichier `router.ts` créer une interface `Route` pour un objet route `{h
 ### Search
 
 Dans le fichier `search.ts` créer une interface pour `filters`.
-Utiliser les `Generics` pour typer les retours de `querySelector` et `querySelectorAll` (pour querySelectorAll utiliser `NodeList` ou `NodeListOf`)
+Utiliser les `Generic` pour typer les retours de `querySelector` et `querySelectorAll`, ex :
+
+```
+const links = document.querySelectorAll<HTMLAnchorElement>('main > a');
+```
 
 ### Product
 
