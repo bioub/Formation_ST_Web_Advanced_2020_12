@@ -8,8 +8,8 @@ function hello() {
 
 function bind(applyThis, originFct) {
   // applyThis est sauvegardé dans une closure
-  return function() {
-    originFct.call(applyThis);
+  return function(...args) {
+    originFct.call(applyThis, ...args);
   };
 }
 

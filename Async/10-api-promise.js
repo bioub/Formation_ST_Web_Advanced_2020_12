@@ -4,7 +4,6 @@
 // - q
 
 const fs = require("fs");
-const { resolve } = require("path");
 
 // 4 méthodes statiques
 // Promise.all
@@ -71,7 +70,7 @@ fs.promises.readFile = async function() {
 (async () => {
   try {
     const sourceUp = await readFileUpper();
-    console.log(sourceUp);
+    console.log(sourceUp); // TEST
   }
   catch (err) {
     console.log(err.message)
@@ -131,10 +130,10 @@ Promise.all([
 
 // Marble graph
 // un tiret vaut 50ms
-// fakeAjax : -------(res)
-// fakeAjax : -----(res)
-// fakeAjax : -------------(res)
-// timeout  : ----(timeout)
+// fakeAjax     : -------(res)
+// fakeAjax     : -----(res)
+// fakeAjax     : -------------(res)
+// timeout(200) : ----(timeout)
 
 // Promise.race(fakeAjax, timeout)
 // -------(res)
@@ -148,7 +147,7 @@ Promise.all([
 // result combiné :
 // --(res)
 
-// Promise.all(fakeAjax, timeout)
+// Promise.all([fakeAjax, timeout])
 // -------(res)
 // ----(timeout)
 // result combiné :

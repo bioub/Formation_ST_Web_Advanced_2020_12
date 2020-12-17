@@ -37,6 +37,14 @@ try {
 //   console.log(data);
 // });
 
+// series : 2 opération l'un après l'autre
+// ex : remove puis mkdir
+
+// parallel : buildJs en meme temps que buildHtml
+
+// waterfall : resultat de l'opération 1 qui est transmis à l'opération 2
+// copy de fichier qui enchaine readfile et writefile
+
 fs.readFile("source.txt", { encoding: "utf-8" }, (err, data) => {
   if (err) {
     console.log(err);

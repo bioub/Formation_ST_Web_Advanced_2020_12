@@ -35,3 +35,5 @@ interval(1000).subscribe(() => console.log('1s'));
 
 // - async iterator (ES2017)
 // combine promise + generator (yield)
+// voir le helloworld de deno (un concurrent de node)
+// https://deno.land/

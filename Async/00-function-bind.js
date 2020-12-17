@@ -42,3 +42,11 @@ romain.hello();
 
 
 Contact.prototype.hello.call(romain);
+
+// Array.prototype.forEach.call(arguments, (arg) => {
+
+// })
+
+// for (const arg of arguments) {
+
+// }
