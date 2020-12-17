@@ -18,6 +18,8 @@ Dans le fichier `tsconfig.json` indiquer que les sources à builder sont dans le
 
 (on copiera le dossier `img`, les fichiers `css` et le fichier `index.html` manuellement pour l'instant)
 
+Dans le fichier `tsconfig.json` indique que le format de modules doit rester en ECMAScript 2015.
+
 ## Typage
 
 ### Pages
@@ -31,7 +33,7 @@ Dans le fichier `router.ts` créer une interface `Route` pour un objet route `{h
 ### Search
 
 Dans le fichier `search.ts` créer une interface pour `filters`.
-Utiliser les `Generics` pour typer les retours de `querySelector` et `querySelectorAll`
+Utiliser les `Generics` pour typer les retours de `querySelector` et `querySelectorAll` (pour querySelectorAll utiliser `NodeList` ou `NodeListOf`)
 
 ### Product
 
