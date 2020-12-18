@@ -17,6 +17,9 @@
 		},
 		{
 			"path": "typescript-spa"
+		},
+		{
+			"path": "API-Node"
 		}
 	],
 	"settings": {

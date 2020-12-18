@@ -14,7 +14,7 @@
 // 4 solutions
 
 // - Continuer d'utiliser les callbacks
-// - Node Stream
+// - Node Stream (traite partiellement le problème)
 const fs = require("fs");
 fs.createReadStream("source.txt")
   .pipe(fs.createWriteStream("dest.txt"));
