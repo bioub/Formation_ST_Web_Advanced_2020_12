@@ -17,3 +17,5 @@ class Contact {
     return `Hello ${this.name}`;
   }
 }
+
+const romain = new Contact('Romain');

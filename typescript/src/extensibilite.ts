@@ -6,11 +6,11 @@ const coords = {};
 // pour contourner
 coords['x'] = 12;
 
-interface Coords {
-  [key: string]: number;
+interface Extensible {
+  [key: string]: any;
 }
 
-const coords2: Coords = {};
+const coords2: Extensible = {};
 
 
 coords2.x = 12;
@@ -19,5 +19,6 @@ coords2.x = 12;
 // tant mieux
 
 const divEl = document.createElement('div');
+// divEl.innerText = 'text';
 // divEl.innerHtml = 'text';
 divEl.innerHTML = 'text';

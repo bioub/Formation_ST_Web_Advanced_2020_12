@@ -1,4 +1,3 @@
-'use strict';
 
 class Clock {
   /** @param {HTMLElement} containerEl */
@@ -7,7 +6,7 @@ class Clock {
   }
   _render() {
     const now = new Date();
-    this._containerEl.innerText = moment(now).format('HH:mm:ss');
+    this._containerEl.innerText = moment(now);
   }
   start() {
     this._render();
