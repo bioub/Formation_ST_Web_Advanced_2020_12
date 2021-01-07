@@ -19,6 +19,6 @@ coords2.x = 12;
 // tant mieux
 
 const divEl = document.createElement('div');
-// divEl.innerText = 'text';
+divEl.innerText = 'text';
 // divEl.innerHtml = 'text';
 divEl.innerHTML = 'text';

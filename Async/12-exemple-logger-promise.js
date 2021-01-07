@@ -19,17 +19,6 @@ fs.promises
   .then(() => logger("Ligne 3"))
   .catch((err) => console.log(err));
 
-async function ensureDir() {
-  try {
-    await fs.promises.access("logs");
-  } catch (err) {
-    if (err.code === "ENOENT") {
-      await fs.promises.mkdir("logs");
-    }
-    throw err;
-  }
-}
-
 async function log3lines() {
   try {
     try {
@@ -46,6 +35,18 @@ async function log3lines() {
     await logger("Ligne 3");
   } catch (err) {
     console.log(err);
+  }
+}
+
+
+async function ensureDir() {
+  try {
+    await fs.promises.access("logs");
+  } catch (err) {
+    if (err.code === "ENOENT") {
+      await fs.promises.mkdir("logs");
+    }
+    throw err;
   }
 }
 
