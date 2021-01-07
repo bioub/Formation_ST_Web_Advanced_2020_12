@@ -19,7 +19,7 @@ hello.call(contact, 'Jean', 'Paul');
 hello.apply(contact, ['Jean', 'Paul']);
 hello.call(contact, ...['Jean', 'Paul']);
 
-// bind créé une nouvelle fonction en forçant la valeur de this
+// bind (ES5) créé une nouvelle fonction en forçant la valeur de this
 const helloContact = hello.bind(contact);
 helloContact('Jean', 'Paul');
 

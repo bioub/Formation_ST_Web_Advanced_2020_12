@@ -31,8 +31,7 @@ try {
 // asynchrone basée sur des callbacks (fonction de rappel)
 // LE THREAD EST LIBRE DE FAIRE AUTRE CHOSE LE TEMPS QUE LE FICHIER SOIT LU
 
-// callback hell / pyramid of doom
-// callbackhell.com
+
 // fs.readFile('source.txt', { encoding: 'utf-8' }, (err, data) => {
 //   console.log(data);
 // });
@@ -45,6 +44,8 @@ try {
 // waterfall : resultat de l'opération 1 qui est transmis à l'opération 2
 // copy de fichier qui enchaine readfile et writefile
 
+// callback hell / pyramid of doom
+// callbackhell.com
 fs.readFile("source.txt", { encoding: "utf-8" }, (err, data) => {
   if (err) {
     console.log(err);

@@ -77,6 +77,8 @@ fs.promises.readFile = async function() {
   }
 })();
 
+fs.promises.readFile = originalReadFile;
+
 
 // (async () => {
 //   await timeout(1000);
@@ -125,7 +127,7 @@ Promise.all([
 //   fakeAjax('/user'),
 //   timeout(200),
 // ]).then((user) => {
-//   console.log(urlUser, urlTodo);
+//   console.log(user);
 // })
 
 // Marble graph

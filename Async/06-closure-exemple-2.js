@@ -15,3 +15,9 @@ function bind(applyThis, originFct) {
 
 const helloContact = bind(contact, hello);
 helloContact();
+
+// ^
+// |
+// |
+// |bind - helloContact
+// +------------------------->

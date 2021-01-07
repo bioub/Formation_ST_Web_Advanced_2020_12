@@ -4,6 +4,11 @@ for (var i=0; i<3; i++) {
   }, 1000);
 }
 
+// dans 1s :
+// 3
+// 3
+// 3
+
 // ^
 // |
 // |for { st (i=0) - st (i=1) - st (i=2) } (i=3) ..↻..    => => =>
@@ -20,6 +25,10 @@ function save(val) {
 for (var i=0; i<3; i++) {
   setTimeout(save(i), 1000);
 }
+// dans 1s :
+// 0
+// 1
+// 2
 
 for (let i=0; i<3; i++) {
   // closure car : block > fonction
@@ -27,3 +36,7 @@ for (let i=0; i<3; i++) {
     console.log(i);
   }, 1000);
 }
+// dans 1s :
+// 0
+// 1
+// 2
