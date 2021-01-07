@@ -20,6 +20,9 @@
 		},
 		{
 			"path": "API-Node"
+		},
+		{
+			"path": "Express-REST"
 		}
 	],
 	"settings": {
