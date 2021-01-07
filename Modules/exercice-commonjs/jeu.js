@@ -1,5 +1,9 @@
 'use strict';
 const readline = require('readline');
+const Random = require('./random');
+
+// const Random2 = require('./random');
+// console.log(Random === Random2); // true
 
 // avec commonjs, importer l'objet Random
 
@@ -52,3 +56,10 @@ class Jeu {
 }
 
 // avec commonjs, exporter la class Jeu
+
+
+// exports.Jeu = Jeu;
+
+// remplace l'objet exports par Jeu
+// export par défaut
+module.exports = Jeu;

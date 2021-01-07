@@ -1,6 +1,6 @@
 'use strict';
 
-// avec commonjs, importer la class Jeu
+const Jeu = require('./jeu');
 
 const game = new Jeu({
   max: 120
