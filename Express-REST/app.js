@@ -14,6 +14,15 @@ app.use(morgan('dev'));
 //   next();
 // });
 
+// GET /api/todos   | POST /api/users/login | GET /api/todos/1234567    | GET /api/other
+//    morgan        |      morgan           |         morgan            |     morgan
+//      ↓ next      |        ↓ next         |       ↓ next              |     ↓ next
+//     cors         |       cors            |      cors                 |     cors
+//      ↓ next      |        ↓ next         |       ↓ next              |     ↓ next
+// list ⥇ res.json |    bodyParser.json     |    show (todo not found)  |               |     notFound ⥇ res.json
+//                           ↓ next         |       ↓ next              |
+//                      login ⥇ res.json   |     notFound ⥇ res.json   |
+
 // CORS Middleware (cross-domain requests)
 // Cross Origin Resource Sharing
 app.use(cors()); // Access-Control-Allow-Origin: *

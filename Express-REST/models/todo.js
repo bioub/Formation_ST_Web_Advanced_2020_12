@@ -20,7 +20,6 @@
 // // premier appel de reducer, le callback : 1, { id: 2 } => 2
 // // => 2
 
-
 // function find() {
 //   return Promise.resolve(todos);
 // }
@@ -58,7 +57,6 @@
 //   return Promise.resolve(todo);
 // }
 
-
 // function findByIdAndReplace(id, newTodo) {
 //   id = Number(id);
 //   const todo = todos.find((c) => c.id === id);
@@ -84,7 +82,28 @@
 // exports.findByIdAndDelete = findByIdAndDelete;
 // exports.findByIdAndReplace = findByIdAndReplace;
 
-const mongoose = require('mongoose');
-const Todo = mongoose.model('Todo', { title: String, completed: Boolean });
+const mongoose = require("mongoose");
+const schema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  completed: {
+    type: Boolean,
+    default: false,
+  },
+});
+
+// // Trigger
+// schema.on('presave', () => {
+
+// })
+
+const Todo = mongoose.model("Todo", schema);
+
+// const obj = new Todo({title: 'Acheter du pain', completed: false});
+// obj.save() // Model.prototype.save
+
+// Todo.create({title: 'Acheter du pain', completed: false})
 
 module.exports = Todo;

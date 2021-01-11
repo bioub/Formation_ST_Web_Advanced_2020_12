@@ -10,7 +10,7 @@ function authenticate(req, res, next) {
     return next();
   }
 
-  res.statusCode = 401;
+  res.statusCode = 401; // UNAUTHORIZED
   res.json({
     msg: 'Unauthorized',
   });

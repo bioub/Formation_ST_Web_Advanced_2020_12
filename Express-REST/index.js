@@ -4,6 +4,8 @@ const config = require('./config');
 const app  = require('./app');
 
 const mongoose = require('mongoose');
+
+// création du Pool de connexion (5 connexion max par défaut)
 mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true, useUnifiedTopology: true});
 
 

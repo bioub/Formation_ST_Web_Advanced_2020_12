@@ -1,4 +1,4 @@
-const Todo = require('../models/todo');
+const Todo = require("../models/todo");
 
 /**
  * @param req {import('express').Request}
@@ -8,9 +8,10 @@ const Todo = require('../models/todo');
 exports.list = async (req, res, next) => {
   try {
     const todos = await Todo.find();
-    res.json(todos);
-  }
-  catch (err) {
+    res.json(
+      todos.map((t) => ({ id: t._id, title: t.title, completed: t.completed }))
+    );
+  } catch (err) {
     next(err);
   }
 };
@@ -30,8 +31,7 @@ exports.show = async (req, res, next) => {
     }
 
     res.json(todo);
-  }
-  catch (err) {
+  } catch (err) {
     next(err);
   }
 };
@@ -46,8 +46,7 @@ exports.add = async (req, res, next) => {
     const todo = await Todo.create(req.body);
     res.statusCode = 201;
     res.json(todo);
-  }
-  catch (err) {
+  } catch (err) {
     next(err);
   }
 };
@@ -67,8 +66,7 @@ exports.delete = async (req, res, next) => {
     }
 
     res.json(todo);
-  }
-  catch (err) {
+  } catch (err) {
     next(err);
   }
 };
@@ -80,7 +78,7 @@ exports.delete = async (req, res, next) => {
  */
 exports.replace = async (req, res, next) => {
   try {
-    const todo = await Todo.findByIdAndReplace(req.params.id, req.body);
+    const todo = await Todo.findOneAndReplace({_id: req.params.id}, req.params.id, req.body);
 
     if (!todo) {
       req.notFoundReason = `Todo ${req.params.id} not found`;
@@ -88,8 +86,7 @@ exports.replace = async (req, res, next) => {
     }
 
     res.json(todo);
-  }
-  catch (err) {
+  } catch (err) {
     next(err);
   }
 };
