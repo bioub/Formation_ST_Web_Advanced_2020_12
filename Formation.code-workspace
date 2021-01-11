@@ -23,6 +23,9 @@
 		},
 		{
 			"path": "Express-REST"
+		},
+		{
+			"path": "React/hello-react"
 		}
 	],
 	"settings": {
