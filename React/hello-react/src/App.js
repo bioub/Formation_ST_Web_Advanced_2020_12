@@ -1,5 +1,7 @@
 import Clock from "./Clock";
 import Counter from "./Counter";
+import ExHelloWorld from "./ExHelloWorld";
+import ExMultiStateButton from "./ExMultiStateButton";
 import Hello from "./Hello";
 
 function App() {
@@ -14,11 +16,13 @@ function App() {
       <Hello name="Jean" />
       <Hello name={"Eric"} />
       <Hello name={name} />
-      <Clock />
+      <Clock format="HH:mm" />
       <Counter />
       <Counter />
       <Counter />
       <Counter />
+      <ExHelloWorld />
+      <ExMultiStateButton values={['Rouge', 'Orange', 'Bleu']} />
     </div>
   );
 }
