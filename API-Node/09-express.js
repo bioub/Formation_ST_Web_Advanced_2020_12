@@ -60,7 +60,6 @@ app.post('/api/user/register', express.json(),(req, res) => {
   const user = req.body;
 
   // TODO écrire dans la DB
-  
   res.json(user);
 });
 
