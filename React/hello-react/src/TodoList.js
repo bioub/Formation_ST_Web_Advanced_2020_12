@@ -25,16 +25,17 @@ class TodoList extends Component {
     event.preventDefault();
     this.setState({
       todos: [
-        ...this.state.todos,
         {
           id: Math.random(),
           title: this.state.newTodo,
           completed: false,
         },
+        ...this.state.todos,
       ],
     });
   };
   handleDelete(todo) {
+    console.log(todo);
     /*
     Exercice 1 :
     Créer un nouveau tableau sans la todo reçu en paramètre (.filter)
@@ -62,11 +63,19 @@ class TodoList extends Component {
   Au double clic de la balise span, la transformer en balise input
   et stocker la valeur saisie dans le tableau
   */
+  handleCheckboxChange = (event, t) => {
+
+  }
+
+  handleDoubleClick = (event) => {
+
+  }
+
   render() {
     const todosJsx = this.state.todos.map((t) => (
       <div key={t.id}>
-        <input type="checkbox" checked={t.completed} />
-        <span>{t.title}</span>
+        <input type="checkbox" checked={t.completed} onChange={(event) => this.handleCheckboxChange(event, t)} />
+        <span onDoubleClick={this.handleDoubleClick}>{t.title}</span>
         <button onClick={() => this.handleDelete(t)}>-</button>
       </div>
     ));

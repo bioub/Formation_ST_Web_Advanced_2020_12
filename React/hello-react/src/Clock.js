@@ -12,6 +12,7 @@ class Clock extends Component {
   constructor() {
     super();
     this.state = {
+      format: '',
       now: new Date(),
     };
     setInterval(() => {
