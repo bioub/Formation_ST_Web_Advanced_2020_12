@@ -8,6 +8,7 @@ import Parent from "./lifting-state-up/Parent";
 import List from "./List";
 import TodoList from "./TodoList";
 import TodoListSimple from "./TodoListSimple";
+import Todos from "./todos/Todos";
 
 function App() {
   // React.createElement(Hello, { name: 'Romain' });
@@ -41,6 +42,7 @@ function App() {
       <HideableClock />
       <h2>Lifting state up</h2>
       <Parent />
+      <Todos />
     </div>
   );
 }
