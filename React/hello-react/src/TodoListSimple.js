@@ -49,7 +49,7 @@ class TodoListSimple extends Component {
     return (
       <div className="TodoList">
         <form onSubmit={this.handleSubmit}>
-          <input type="checkbox" onClick={this.handleToggle} />
+          <input type="checkbox" />
           <input
             type="text"
             onChange={this.handleChange}
