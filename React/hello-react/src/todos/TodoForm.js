@@ -2,7 +2,7 @@ function TodoForm({ newTodo, onNewTodoChange, onAdd }) {
   function handleSubmit(event) {
     event.preventDefault();
     onAdd({
-      id: Math.random(),
+      // id: Math.random(),
       title: newTodo,
       completed: false,
     });

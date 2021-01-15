@@ -30,7 +30,7 @@ exports.show = async (req, res, next) => {
       return next();
     }
 
-    res.json(todo);
+    res.json({id: todo._id, title: todo.title, completed: todo.completed});
   } catch (err) {
     next(err);
   }
@@ -45,7 +45,7 @@ exports.add = async (req, res, next) => {
   try {
     const todo = await Todo.create(req.body);
     res.statusCode = 201;
-    res.json(todo);
+    res.json({id: todo._id, title: todo.title, completed: todo.completed});
   } catch (err) {
     next(err);
   }

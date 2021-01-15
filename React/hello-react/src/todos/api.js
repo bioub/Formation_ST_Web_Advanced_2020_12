@@ -13,8 +13,14 @@ async function postTodo(todo) {
     body,
     headers: {
       Authorization: "d4973653-9895-4123-a7dd-3e1387d0fbde",
+      'Content-Type': 'application/json'
     },
   });
-  const todo = await res.json();
-  return todo;
+  const todoFromExpress = await res.json();
+  return todoFromExpress;
 }
+
+export {
+  fetchTodos,
+  postTodo,
+};
