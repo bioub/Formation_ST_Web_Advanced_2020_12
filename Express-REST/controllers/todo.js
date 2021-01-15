@@ -65,7 +65,7 @@ exports.delete = async (req, res, next) => {
       return next();
     }
 
-    res.json(todo);
+    res.json({id: todo._id, title: todo.title, completed: todo.completed});
   } catch (err) {
     next(err);
   }
@@ -85,7 +85,7 @@ exports.replace = async (req, res, next) => {
       return next();
     }
 
-    res.json(todo);
+    res.json({id: todo._id, title: todo.title, completed: todo.completed});
   } catch (err) {
     next(err);
   }
