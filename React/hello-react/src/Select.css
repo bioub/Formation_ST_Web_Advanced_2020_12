@@ -1,0 +1,28 @@
+.Select {
+
+}
+
+.Select-selected {
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.Select-items {
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.Select-item {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.Select-item:hover {
+  background-color: lightgrey;
+}
+
+.Select-item.active {
+  background-color: lightskyblue;
+}

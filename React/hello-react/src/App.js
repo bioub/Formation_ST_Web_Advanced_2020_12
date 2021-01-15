@@ -1,4 +1,5 @@
 // import Clock from "./Clock";
+import { useState } from "react";
 import Counter from "./Counter";
 import ExHelloWorld from "./ExHelloWorld";
 import ExMultiStateButton from "./ExMultiStateButton";
@@ -15,7 +16,11 @@ function App() {
   // React.createElement(Hello, { name: 'Romain' });
   // <Hello name="Romain" />
 
-  const name = 'Toto';
+  // state de colors
+  const [colors, setColors] = useState(["Rouge", "Orange", "Bleu"]);
+  const [selectedColor, setSelectedColor] = useState("Orange");
+
+  const name = "Toto";
 
   return (
     <div className="App">
@@ -33,7 +38,7 @@ function App() {
       <Counter />
       <h2>Exercices</h2>
       <ExHelloWorld />
-      <ExMultiStateButton values={['Rouge', 'Orange', 'Bleu']} />
+      <ExMultiStateButton values={colors} />
       <h2>List</h2>
       <List />
       <h2>Exercice TodoList</h2>
@@ -45,7 +50,11 @@ function App() {
       <Parent />
       <Todos />
       <h2>Select</h2>
-      <Select items={['Rouge', 'Orange', 'Bleu']} selected="Orange" onSelectedChange={() => {}} />
+      <Select
+        items={colors}
+        selected={selectedColor}
+        onSelectedChange={(val) => setSelectedColor(val)}
+      />
     </div>
   );
 }
