@@ -1,12 +1,13 @@
 import TodoItem from "./TodoItem";
 
-function TodoList() {
-  return <div className="TodoList">
-    <TodoItem />
-    <TodoItem />
-    <TodoItem />
-    <TodoItem />
-  </div>
+function TodoList({ items = [] }) {
+  return (
+    <div className="TodoList">
+      {items.map((it) => (
+        <TodoItem key={it.id} todo={it} />
+      ))}
+    </div>
+  );
 }
 
 export default TodoList;

@@ -6,6 +6,7 @@ import Hello from "./Hello";
 import HideableClock from "./HideableClock";
 import Parent from "./lifting-state-up/Parent";
 import List from "./List";
+import Select from "./Select";
 import TodoList from "./TodoList";
 import TodoListSimple from "./TodoListSimple";
 import Todos from "./todos/Todos";
@@ -43,6 +44,8 @@ function App() {
       <h2>Lifting state up</h2>
       <Parent />
       <Todos />
+      <h2>Select</h2>
+      <Select items={['Rouge', 'Orange', 'Bleu']} selected="Orange" onSelectedChange={() => {}} />
     </div>
   );
 }

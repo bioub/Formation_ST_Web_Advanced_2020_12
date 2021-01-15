@@ -19,11 +19,25 @@ class Todos extends Component {
     ],
   };
 
+  handleNewTodoChange = (newTodo) => {
+    //  this.setState({ newTodo: newTodo });
+    this.setState({ newTodo }); // shorthand property ES6
+  };
+
+  handleAdd = (todo) => {
+    this.setState({ newTodo: "", todos: [todo, ...this.state.todos] });
+  };
+
   render() {
+    const { newTodo, todos } = this.state;
     return (
       <div className="Todos">
-        <TodoForm />
-        <TodoList />
+        <TodoForm
+          newTodo={newTodo}
+          onNewTodoChange={this.handleNewTodoChange}
+          onAdd={this.handleAdd}
+        />
+        <TodoList items={todos} />
       </div>
     );
   }
