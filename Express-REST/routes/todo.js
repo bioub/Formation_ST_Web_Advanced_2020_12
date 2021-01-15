@@ -14,7 +14,7 @@ router.get('/:id',
 );
 
 router.post('/',
-  authenticate,
+  // authenticate,
   // hasRole('ADMIN'),
   express.json(),
   todoCtrl.add
