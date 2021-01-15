@@ -1,0 +1,15 @@
+header {
+  display: flex;
+  background-color: #03234b;
+  padding: 10px;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+header a.active {
+  text-decoration: underline;
+}

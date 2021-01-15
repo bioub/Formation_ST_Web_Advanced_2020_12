@@ -26,6 +26,9 @@
 		},
 		{
 			"path": "React/hello-react"
+		},
+		{
+			"path": "React/project-react"
 		}
 	],
 	"settings": {
