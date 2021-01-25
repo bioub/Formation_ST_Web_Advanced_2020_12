@@ -19,10 +19,11 @@
   cursor: pointer;
 }
 
+.Select-item--active {
+  background-color: lightskyblue;
+}
+
 .Select-item:hover {
   background-color: lightgrey;
 }
 
-.Select-item.active {
-  background-color: lightskyblue;
-}

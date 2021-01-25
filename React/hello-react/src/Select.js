@@ -120,7 +120,7 @@ class Select extends Component {
     const itemsJsx = items.map((it) => (
       <div
         className={classNames("Select-item", {
-          active: it === selected,
+          'Select-item--active': it === selected,
         })}
         key={it}
         onClick={() => this.handleClickItem(it)}
