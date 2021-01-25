@@ -32,6 +32,9 @@
 		},
 		{
 			"path": "Exercice-Build-webpack"
+		},
+		{
+			"path": "Unit-Tests"
 		}
 	],
 	"settings": {
