@@ -29,6 +29,9 @@
 		},
 		{
 			"path": "React/project-react"
+		},
+		{
+			"path": "Exercice-Build-webpack"
 		}
 	],
 	"settings": {

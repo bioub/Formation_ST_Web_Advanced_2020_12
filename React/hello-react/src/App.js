@@ -1,5 +1,6 @@
 // import Clock from "./Clock";
 import { useState } from "react";
+
 import Counter from "./Counter";
 import ExHelloWorld from "./ExHelloWorld";
 import ExMultiStateButton from "./ExMultiStateButton";
@@ -48,6 +49,7 @@ function App() {
       <HideableClock />
       <h2>Lifting state up</h2>
       <Parent />
+      <h2>Todos (state up)</h2>
       <Todos />
       <h2>Select</h2>
       <Select

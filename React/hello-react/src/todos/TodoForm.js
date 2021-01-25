@@ -1,4 +1,5 @@
 function TodoForm({ newTodo, onNewTodoChange, onAdd }) {
+  console.log('render form');
   function handleSubmit(event) {
     event.preventDefault();
     onAdd({
