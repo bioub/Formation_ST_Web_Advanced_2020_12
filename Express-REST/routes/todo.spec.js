@@ -13,3 +13,14 @@ test('GET /api/todos', async () => {
   expect(res.body).toStrictEqual([{id: 1, title: 'A'}]);
   expect(Todo.find).toHaveBeenCalledWith();
 });
+
+/*
+Exercice
+En vous inspirant de l'exemple ci dessus :
+Vérifier que lorsque find nous donne une erreur :
+Todo.find.mockRejectedValueOnce(new Error('Async error'));
+
+Le status de la réponse vaut 500
+Le body de la réponse contient le message d'erreur attendu (faire
+un console.log de res.body si nécessaire)
+*/
