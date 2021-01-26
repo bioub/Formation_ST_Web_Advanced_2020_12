@@ -19,5 +19,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }

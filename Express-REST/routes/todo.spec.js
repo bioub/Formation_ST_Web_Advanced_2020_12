@@ -14,6 +14,16 @@ test('GET /api/todos', async () => {
   expect(Todo.find).toHaveBeenCalledWith();
 });
 
+test('GET /api/todos error', async () => {
+  // Todo.find.mockImplementationOnce(() => Promise.resolve([{_id: 1, title: 'A'}]));
+  Todo.find.mockRejectedValueOnce(new Error('find error'));
+  const res = await request(app).get('/api/todos');
+
+  expect(res.status).toStrictEqual(500);
+  expect(res.body).toStrictEqual({msg: 'find error'});
+  expect(Todo.find).toHaveBeenCalledWith();
+});
+
 /*
 Exercice
 En vous inspirant de l'exemple ci dessus :
