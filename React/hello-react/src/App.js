@@ -32,7 +32,7 @@ function App() {
       <Hello name={name} />
       <h2>Clock</h2>
       {/* <Clock format="HH:mm" /> */}
-      <h2>Counter</h2>
+      <h2>Counter Hot module replacement</h2>
       <Counter />
       <Counter />
       <Counter />

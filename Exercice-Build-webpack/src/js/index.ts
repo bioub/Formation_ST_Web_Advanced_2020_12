@@ -4,4 +4,5 @@ document.addEventListener("click", async () => {
   const divElt = document.querySelector<HTMLElement>(".horloge");
   const clock = new Horloge(divElt);
   clock.start();
+
 });

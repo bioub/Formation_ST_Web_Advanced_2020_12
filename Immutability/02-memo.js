@@ -8,6 +8,20 @@ function countCompleted(todos) {
 
 const memoizedCountCompleted = memo(countCompleted);
 
+const map = new Map();
+
+function memoizedCountCompleted(arg) {
+  if (map.has(arg)) {
+    return map.get(arg);
+  }
+
+  const result = countCompleted();
+
+  map.set(arg, result);
+
+  return result;
+}
+
 console.time('countCompleted');
 console.log(memoizedCountCompleted(todos)); // créé un cache
 console.timeEnd('countCompleted');

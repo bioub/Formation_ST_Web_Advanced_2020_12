@@ -6,6 +6,10 @@ const { hello } = require('./hello');
 // - elle ne modifie pas ses paramètres
 // - elle n'a de side-effect (pas d'appel externe)
 
+test('Test de la fonction hello ne fasse pas d\'erreur', () => {
+  hello('Romain');
+});
+
 test('Test de la fonction hello', () => {
   // Style TDD (Test Driven Development)
   // assert.strictEqual(hello('Romain'), 'Hello Romain !');
